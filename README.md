@@ -1,8 +1,12 @@
 # Abbrev
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/abbrev`. To experiment with that code, run `bin/console` for an interactive prompt.
+Given a set of strings, calculate the set of unambiguous abbreviations for
+those strings, and return a hash where the keys are all the possible
+abbreviations and the values are the full strings.
 
-TODO: Delete this and the text above, and describe your gem
+Thus, given +words+ is "car" and "cone", the keys pointing to "car" would
+be "ca" and "car", while those pointing to "cone" would be "co", "con", and
+"cone".
 
 ## Installation
 
@@ -22,7 +26,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'abbrev'
+
+Abbrev.abbrev(%w{ car cone })
+#=> {"ca"=>"car", "con"=>"cone", "co"=>"cone", "car"=>"car", "cone"=>"cone"}
+```
 
 ## Development
 
@@ -32,5 +41,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/hsbt/abbrev.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ruby/abbrev.
 
