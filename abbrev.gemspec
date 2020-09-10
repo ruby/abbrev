@@ -1,8 +1,6 @@
-require_relative 'lib/abbrev/version'
-
 Gem::Specification.new do |spec|
   spec.name          = "abbrev"
-  spec.version       = Abbrev::VERSION
+  spec.version       = "0.1.0"
   spec.authors       = ["Akinori MUSHA"]
   spec.email         = ["knu@idaemons.org"]
 
