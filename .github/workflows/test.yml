@@ -20,6 +20,8 @@ jobs:
           - { os: windows-latest, ruby: truffleruby-head }
           - { os: windows-latest, ruby: truffleruby }
     runs-on: ${{ matrix.os }}
+    env:
+      BUNDLE_WITHOUT: sig
     steps:
     - uses: actions/checkout@v4
     - name: Set up Ruby
@@ -28,7 +30,6 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
     - name: Install dependencies
       run: |
-        bundle config set without 'sig'
         bundle install
     - name: Run test
       run: rake test
